@@ -1,0 +1,1 @@
+console.log(`The file is added to check for the test`);
