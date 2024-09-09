@@ -1,0 +1,2 @@
+This is content written using the cat command.
+Appinding the content of the file using the cat command.
