@@ -238,3 +238,49 @@ q: Quit and return to the terminal.
 
 - GitHub is online platform having  the power of git (version control system) allows to user collaborate, bug fixing and managing the project online.
 - GitHub, GitLab, Git Bucket are online hosting/uploading platform for the project management and collaboration.
+
+
+# Part-2
+
+Q1. `How exactyly internally git store data?`
+		- internally git is a <key,value> data store.
+		- key -> hash of the data we want to store.
+			- key -> 40 digits hexadecimal value. (SHA-1) HASHCODE
+			- for same data, this hash will be same.
+		- value -> actual data
+			- value -> git stores the compressed data in a blob and some more metadata in  the header
+			- BLOB -> Big Large Object data type.
+			
+2. `rm -rf` -> recursively and forcefully remove the non-empty folder and its sub-directories.
+
+3. LEARN HOW TO INSTALL TREE TO VIEW THE FOLDER STRUCTURE IN BETER WAY.
+
+4. when we do git add filename -> git stores the BLOB of the file in the /object folder inside
+	 the /.git folder where: key-> first two hex-value of the hashcode and remaining 38-values
+	 stores the actual data of the file.
+	
+5. Inside Git, content is stored only once. If you have to files with the same content then,
+	 both the files refer to only single BLOB for the content. There will be only one KEY-VALUE
+	 BLOB for both the files.
+
+Q6. `HOW GIT HANDLES THE DIRECTORIES?`
+		 - Git use Tree object to store infomation about directories and their content.
+		 - Tree are directed Graph.
+		 - Tree contains pointers to other blobs and trees.
+		 
+7. Git internally does a lot of optimisation, the objects are store in compressed form.
+
+8. Git mainly stores data about the changes & algorithmically shows us the file content with that change.
+
+9. `git cat-file <flag> <hash>`
+		flag: -t -> type of the object.
+					-p -> print the content of the object.
+		hash: 5-6 characters to identify objects.
+
+10. Commits -> object -> commit object.
+		- every commit object points to a tree.
+		- The commit object has data of -> Author & Committer
+																		-> date
+																		-> message
+																		-> parent commit
+																		-> folders -> as the tree 
