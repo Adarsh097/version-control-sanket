@@ -320,3 +320,47 @@ Q6. `HOW GIT HANDLES THE DIRECTORIES?`
 
 If you'd like to explore further with code examples, feel free to ask!
 ##########################################################################################	
+
+12. Every commit point to the parent commit. This means you can go from one version to other 
+		version or the previous version.
+		
+13. DS like tree, ll, hashing are used in git to manage the data.
+
+14. When you create a commit -> it leads to the creation of tree,blob,commit object in the
+		/object of /.git.
+15. After making commit if you want to change the content and don't want to do extra commit
+		you can ammend this to the previous commit. 
+
+16. Make changes -> git add . -> `git commit --amend` -> this will update the changes in the 
+		previous commit only.
+17. Even if you have made ammendment in the previous commit only, but it will create new commit
+		object. Because commit object can't be changed -> every commit object stores the time-stamp.
+		
+18. This will make the commit history clean.
+
+19. HEAD pointer points to the latest commit that you have made.
+
+20. Whenever we code, it can be in one of the following area:
+		1. `working area` -> the files/changes which are not in your staging area and may be
+					currently not handled by git are in the WORKING AREA. The files/changes are
+					also called as UNTRACKED files/changes. After modification the changes that are 
+					modified are also in the working area.
+				
+	  2. `staging area` -> files and changes which are surely going to be part of the commit
+	  are in the staging area. i.e. files/changes when we do (git add).
+	  Staging area is the palce where git knows what will change b/w the current and next commit.
+	  
+		 
+		
+		3. repo -> When you make the commit, the files/changes go to the repo area.
+		
+21. $ git restore --staged fileName -> to make staged file to come back to the untracked
+		status i.e. unstaged area and also store the previous commits.
+		
+		git rm --cached fileName -> to bring complete file to the working area. -> git is not
+		tracking the file completely. This will make the file to be deleted from the staging
+		area but not from the memory.
+		
+22. `git restore fileName` -> to restore the changes of the working directory.
+
+23. If you make the change and revert it manually then, it will not show modified.
