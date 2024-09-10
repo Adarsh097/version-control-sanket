@@ -284,3 +284,39 @@ Q6. `HOW GIT HANDLES THE DIRECTORIES?`
 																		-> message
 																		-> parent commit
 																		-> folders -> as the tree 
+
+##########################################################################################
+11. SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function used in Git to uniquely identify objects like commits, blobs, trees, and tags. Git uses SHA-1 to ensure data integrity and track changes efficiently by representing the state of a file or the entire project as a unique 40-character hexadecimal string.
+
+### How Git Uses SHA-1:
+1. **Object Storage:**
+   - Git stores four types of objects: commits, blobs (file contents), trees (directories), and tags. Each object is stored in a key-value database where the key is the SHA-1 hash of the object's content.
+
+2. **Object Hashing Process:**
+   - When Git creates an object (e.g., a commit), it calculates a SHA-1 hash from the contents of the object. The hash becomes the object's ID in the repository.
+
+3. **Example:**
+   - Let’s say a file contains "Hello, Git!". When Git stores this file, it creates a blob object with the file's contents. Git then calculates the SHA-1 hash of the file to identify it uniquely.
+   - The command:
+     ```bash
+     echo "Hello, Git!" | git hash-object --stdin
+     ```
+     This produces a hash like:
+     ```
+     d95f3e35f0dfd3b20bc8215442ba8139d6cb1b98
+     ```
+
+4. **Commit Hashes:**
+   - Commits are also hashed using SHA-1, and the hash of a commit includes information such as the parent commit, commit message, tree object (representing the project state), author, and timestamp.
+   - This ensures that even a slight change in any of these elements (e.g., a file change or message change) will result in a completely different commit hash, making each commit uniquely identifiable.
+
+5. **Data Integrity:**
+   - By using SHA-1, Git ensures that the content hasn't been tampered with. If the content changes (even by a single bit), the SHA-1 hash will change, making it easy to detect discrepancies.
+
+### Key Points:
+- SHA-1 in Git is not used for encryption but for creating unique identifiers for content.
+- The 40-character hexadecimal SHA-1 hash serves as a fingerprint for each object.
+- Any change in file content, commit data, or metadata results in a new SHA-1 hash, ensuring robust version control.
+
+If you'd like to explore further with code examples, feel free to ask!
+##########################################################################################	
