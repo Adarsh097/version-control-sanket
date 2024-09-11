@@ -364,3 +364,50 @@ If you'd like to explore further with code examples, feel free to ask!
 22. `git restore fileName` -> to restore the changes of the working directory.
 
 23. If you make the change and revert it manually then, it will not show modified.
+
+
+--------------------------------------------------------------------------------------------------------------
+                                                    Part-3
+
+1. For example, to rename oldfile.txt to newfile.txt, you would run:
+``git mv oldfile.txt newfile.txt``
+
+2.`cp <source_file> <destination_file>` -> to copy content of source file to destination file.
+
+3. ` nano ~/.gitconfig` -> to open the git configuration in editor-nano.
+
+##########################################################################################
+
+																    	BRANCHING
+
+1. When you do git init you are assigned with the main/master branch i.e. the main 
+	branch.
+
+2. Branches means you can maintain multiple state of a project. When you want to 
+	 create two or more features to the project and you are not sure where they should be
+	 in the final project then, you can create branch of the main/master branch -> you can make 
+	 changes in that branch and once you are sure that you want the changes -> you can merge 
+	 the /featureBranch with the main-branch.
+
+3. `git checkout -b branchName` -> to create a new branch and switch to that branch.
+
+4. `git checkout branchName` -> to switch to a particular branch.
+
+5. `git branch` -> to see all the branches.
+
+6. `git switch -C branchName` -> to create a branch and switch to that branch.
+
+7. `git switch branchName` -> to switch to a particular branch.
+
+8. When you do commit in the master branch, these commit will not be reflected in the 
+	new branch that you create and vice-versa(you can merge to reflect the changes).
+
+9. production branch , pre-prod/testing branch.
+
+10. Go to the master and do -> `git merge branchFeatureName` -> to merge the feature
+		branch with main/master branch.
+
+11. you can do merging with any branch to any other branch by going in that branch ->
+		then, merge the branch that you want to merge.
+
+50:00
