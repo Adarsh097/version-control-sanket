@@ -1,0 +1,1 @@
+The content it added in the newfile of the master branch.
